@@ -15,3 +15,17 @@ find the grade of a student based on their IDand update the grade of a student.
 The program should write the students' records to a file and also read the records 
 from a file.
 
+
+
+
+- A class is a user-defined data type whose variables are objects. These 
+objects can have both member variables and member functions. An object is a runtime instantiation of a class.
+
+
+- Encapsulation: combining a number of items, such as variables and functions, into a single package,
+such as an object of some class.
+
+
+
+
+
