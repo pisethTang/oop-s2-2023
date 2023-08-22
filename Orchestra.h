@@ -7,7 +7,8 @@ class Orchestra{
         Musician* musicians;
     public:
         Orchestra(); // default constructor
-        Orchestra(int size, Musician* musician); // user-defined constructor
+        Orchestra(int size);
+        Orchestra(int size, Musician* musicians); // user-defined constructor
 
         //returns the number of musicians who have joined the orchestra
         int get_current_number_of_members();
@@ -23,12 +24,7 @@ class Orchestra{
         // returns true and adds new musician to orchestra if the orchestra is not full
         bool add_musician(Musician new_musician);
 
-        ~Orchestra(){
-
-        delete[] musicians;
-
-        std::cout << "Orchestra destroyed!" << std::endl;
-};
+        ~Orchestra();
         // ~Orchestra();
 
 
