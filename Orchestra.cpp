@@ -5,14 +5,15 @@ Orchestra::Orchestra() // default
     : size(0)
 {}
 
-Orchestra::Orchestra(int size) //user-defined
+Orchestra::Orchestra(int size,  Musician* musicians) //user-defined
 { 
     this -> size = size;
+    this -> musicians = new Musician[size];
 }
 
 int Orchestra::get_current_number_of_members(){
-    int current_size
-    return 10;
+    int* current_size = new int(0);
+    return *current_size;
 }
 
 bool Orchestra::has_instrument(std::string instrument){
@@ -26,8 +27,7 @@ bool Orchestra::has_instrument(std::string instrument){
 
 // returns the array of members of the orchestra
 Musician* Orchestra::get_members(){
-    Musician* members = new Musician[size];
-    return members;
+    return musicians;
 }
 
 // returns true and adds new musician to orchestra if the orchestra is not full
@@ -41,6 +41,7 @@ bool Orchestra::add_musician(Musician new_musician)
     if (current_size > size) return false;
 
     // add new_musician to the members array and return true
+    (current_size)++;
     members[current_size+1] = new_musician;   
 
     return true;

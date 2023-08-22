@@ -8,8 +8,10 @@
 
 int main(){
     int size = 5;
+    Musician* musicians = new Musician[size];
     // create an empty orchestra of max size 5
-    Orchestra orchestra(size);
+    Orchestra orchestra(size, musicians);
+
 
     // Create some musicians
     Musician m1("violin", 5);
@@ -53,8 +55,10 @@ int main(){
         std::cout << "The orchestra has a violinist." << std::endl;
     }
     else{
-        std::cout << "the orchestra does not have a violinst." << std::endl; 
+        std::cout << "The orchestra does not have a violinst." << std::endl; 
     }
+
+    
 
     // Get the list of musicians in the orchestra
     Musician* members = orchestra.get_members();
