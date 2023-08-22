@@ -1,3 +1,6 @@
+#include "Musician.h"
+#include<iostream>
+
 class Orchestra{
     private:
         int size;
@@ -11,6 +14,22 @@ class Orchestra{
         // returns true if any musician in the orchestra plays the specified instrument
         // otherwise, returns false
         bool has_instrument(std::string instrument);
-        
+
+
+        // returns the array of members of the orchestra
+        Musician *get_members();
+
+        // returns true and adds new musician to orchestra if the orchestra is not full
+        bool add_musician(Musician new_musician);
+
+        ~Orchestra(){
+        delete get_members();
+
+        std::cout << "Orchestra destroyed!" << std::endl;
+};
+        // ~Orchestra();
+
+
+
 
 };
