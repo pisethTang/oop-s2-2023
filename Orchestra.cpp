@@ -73,5 +73,5 @@ bool Orchestra::add_musician(Musician new_musician)
 
 Orchestra::~Orchestra(){
     delete[] musicians;
-    std::cout << "Orchestra destroyed!" << std::endl;
+    // std::cout << "Orchestra destroyed!" << std::endl;
 }

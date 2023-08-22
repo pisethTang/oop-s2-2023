@@ -27,13 +27,13 @@ int main(){
         std::cout << "Added musician 1 to the orchestra" << std::endl;
     }
     else{std::cout << "SIZE FULL! Could not add musician 1 to the orchestra" << std::endl;}
-    std::cout << orchestra.get_current_number_of_members() << std::endl;
+    // std::cout << orchestra.get_current_number_of_members() << std::endl;
 
     if (orchestra.add_musician(m2)){
         std::cout << "Added musician 2 to the orchestra" << std::endl;
     }
     else{std::cout << "SIZE FULL! Could not add musician 2 to the orchestra" << std::endl;}
-    std::cout << orchestra.get_current_number_of_members() << std::endl;
+    // std::cout << orchestra.get_current_number_of_members() << std::endl;
 
     if (orchestra.add_musician(m3)){
         std::cout << "Added musician 3 to the orchestra" << std::endl;
@@ -71,17 +71,17 @@ int main(){
     }
 
 
-    std::cout << "1" << std::endl;
+    // std::cout << "1" << std::endl;
     // // Get the list of musicians in the orchestra
     Musician* members = orchestra.get_members();
-    std::cout << "2" << std::endl;
+    // std::cout << "2" << std::endl;
     // // Print the details for each musician
 
 
     for (int i = 0; i<orchestra.get_current_number_of_members(); i++){
         std::cout << "Musician " << i+1 << " plays " << members[i].get_instrument() << " and has " << members[i].get_experience() << " years of experience." << std::endl;
     }
-    std::cout << "3" << std::endl;
+    // std::cout << "3" << std::endl;
 
     return 0;
 }
