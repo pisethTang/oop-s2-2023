@@ -7,10 +7,11 @@
 
 class Musician{
     private:
-
+        std::string instrument;
+        int experience;
 
     public:
-        Musician();
+        Musician();  // a default constructor
         Musician(std::string instrument, int experience);
         std::string get_instrument();
         int get_experience();
