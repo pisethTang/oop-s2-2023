@@ -18,7 +18,7 @@ Orchestra::Orchestra(int size) //user-defined
 Orchestra::Orchestra(int size, Musician* musicians) //user-defined
 { 
     this -> size = size;
-    this -> musicians = new Musician[size];
+    this -> musicians = musicians;
 }
 
 // int* Orchestra::get_current_number_of_members(){
