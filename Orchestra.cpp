@@ -62,9 +62,9 @@ bool Orchestra::add_musician(Musician new_musician)
     if (current_size >= size) return false;
 
     else{
-        current_size++;
     // add new_musician to the members array and return true
-    musicians[current_size - 1] = new_musician;
+    musicians[current_size] = new_musician;
+    current_size++;
 
     return true;
     }
