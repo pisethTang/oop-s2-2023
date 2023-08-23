@@ -60,7 +60,7 @@ bool Clinic::addCage(Cage new_cage){
 }
 
 Clinic::~Clinic(){
-    std::cout << "Clinic destroyed!" <<std::endl;
+    // std::cout << "Clinic destroyed!" <<std::endl;
     delete[] cages;
 }
 
