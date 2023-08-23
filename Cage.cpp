@@ -31,5 +31,5 @@ int Cage::getIDnum(){
 }
 
 Cage::~Cage(){
-    std::cout << "Cage destroyed!" <<std::endl;
+    // std::cout << "Cage destroyed!" <<std::endl;
 }
