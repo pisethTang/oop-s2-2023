@@ -1,5 +1,6 @@
 #include <string>
 #include "player.h"
+#include <iostream>
 
 //Constructor
 Player::Player(std::string name, int health, int damage)
