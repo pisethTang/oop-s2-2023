@@ -24,5 +24,5 @@ void Wizard::setMana(int mana){
 }
 
 Wizard::~Wizard(){
-    delete opponent;
+    // delete opponent;
 }

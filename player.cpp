@@ -2,7 +2,7 @@
 #include "player.h"
 
 //Constructor
-Player::Player(string name, int health, int damage)
+Player::Player(std::string name, int health, int damage)
     :name(name), health(health), damage(damage){}
 
 void Player::attack(Player* opponent, int damage){
