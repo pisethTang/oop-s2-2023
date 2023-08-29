@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <string>
 #include "warrior.h"
 #include "player.h"
 
@@ -15,7 +15,7 @@ Warrior::Warrior(std::string name, int health, int damage,std::string weapon)
 
 // deals damage to the opponent based on the player's weapon's damage point
 void Warrior::swingWeapon(Player* opponent){
-    opponent -> getHealth() = takeDamage(damage);
+    opponent -> takeDamage(damage);
     std::cout << name <<" swings their " << weapon << " at " << opponent -> getName() << "!" << "\n";
 }
 
@@ -28,7 +28,7 @@ std::string Warrior::getWeapon(){
 }
 
 Warrior::~Warrior(){
-    delete opponent;
+    // delete opponent;
 }
 
 

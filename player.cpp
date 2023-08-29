@@ -18,31 +18,31 @@ void Player::takeDamage(int damage){
 
 // Setters
 
-void setHealth(std::string health){
+void Player::setHealth(int health){
     this -> health = health;
 }
 
-void setName(std::string name){
+void Player::setName(std::string name){
     this -> name = name;
 }
-void setDamage(int damage){
+void Player::setDamage(int damage){
     this -> damage = damage;
 }
 // Getters
-int getHealth(){
+int Player::getHealth(){
     return health;
 }
 
-std::string getName(){
+std::string Player::getName(){
     return name;
 }
 
-int getDamage(){
-    return damage;
-}
+// int getDamage(){
+//     return damage;
+// }
 
 Player::~Player(){
-    delete opponent;
+    // delete opponent;
 }
 
 
