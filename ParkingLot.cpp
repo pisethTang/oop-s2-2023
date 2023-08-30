@@ -33,6 +33,7 @@ void ParkingLot::unparkVehicle(int ID){
         if(vehicles[i]->getID() == ID){
             // std::cout << "Vehicle with ID " << ID << " found!\n";
             delete vehicles[i];
+            current_capacity--;
         }
     }
     std::cout << "Vehicle not in the lot"<<std::endl;

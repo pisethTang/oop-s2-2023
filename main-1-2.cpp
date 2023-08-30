@@ -26,7 +26,6 @@ int main(){
     Vehicle** vehicles = new Vehicle*[num_vehicle];
 
     ParkingLot park_lot(10);
-    main();
 
     return 0;
 }
