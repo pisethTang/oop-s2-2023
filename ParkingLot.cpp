@@ -1,4 +1,5 @@
 #include "ParkingLot.h"
+// #include "Vehicle.h"
 #include <iostream>
 
 ParkingLot::ParkingLot(int max_capacity)
@@ -29,8 +30,8 @@ void ParkingLot::parkVehicle(Vehicle* vehicle){ // the current capacity should i
 
 void ParkingLot::unparkVehicle(int ID){
     for(int i=0;i<current_capacity; i++){
-        if(ID == vehicles[i].getID()){
-            std::cout << "Vehicle with ID " << ID << " found!\n";
+        if(vehicles[i]->getID() == ID){
+            // std::cout << "Vehicle with ID " << ID << " found!\n";
             delete vehicles[i];
         }
     }

@@ -27,9 +27,6 @@ int main(){
 
     ParkingLot park_lot(10);
     main();
-    
-
-    park_lot
 
     return 0;
 }
