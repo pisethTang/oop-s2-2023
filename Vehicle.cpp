@@ -19,8 +19,8 @@ Vehicle::Vehicle(){
 
 int Vehicle::getParkingDuration(){
     time_t end_park = time(nullptr);
-    int time_elapsed = end_park - timeOfEntry;
-    return timeOfEntry;
+    int timeElapsed = end_park - timeOfEntry;
+    return timeElapsed;
 }
 
 
