@@ -55,13 +55,13 @@ int main(){
         cin >> c;
         switch(c){
             case 1: 
-                vehicles[i] = new Car();
+                vehicles[i] = new Car(1);
                 break;
             case 2: 
-                vehicles[i] = new Motorbike();
+                vehicles[i] = new Motorbike(2);
                 break;
             case 3: 
-                vehicles[i] = new Bus();
+                vehicles[i] = new Bus(3);
                 break;
             default: break;
         }
