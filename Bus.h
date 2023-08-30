@@ -6,6 +6,7 @@
 
 class Bus: public Vehicle{
     public:
+        Bus(int ID);
         Bus();
         int getParkingDuration(); //returns an integer representing the number of seconds that the vehicle has been parked in the lot.
 

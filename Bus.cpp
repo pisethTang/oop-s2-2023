@@ -4,10 +4,14 @@
 #include <iostream>
 
 
-Bus::Bus()
+Bus::Bus(int ID)
     {
+        this -> ID = ID;
         timeOfEntry = time(nullptr);
     }
+
+Bus::Bus()
+    :Bus(0){}
 
 int Bus::getParkingDuration(){
     time_t end_park = time(nullptr);

@@ -5,11 +5,13 @@
 #include <iostream>
 
 
-Car::Car()
+Car::Car(int ID)
     {
+        this -> ID = ID;
         timeOfEntry = time(nullptr);
     }
-
+Car::Car():
+    Car(0){}
 
 int Car::getParkingDuration(){
     time_t end_park = time(nullptr);

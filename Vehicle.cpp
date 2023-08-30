@@ -11,7 +11,7 @@ Vehicle::Vehicle(int ID)
 }
 
 
-Vehicle::Vehicle(){
+Vehicle::Vehicle(): Vehicle(0){
     // std::cout << "Default constructor\n";
 }
 

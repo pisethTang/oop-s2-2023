@@ -4,10 +4,14 @@
 #include "Motorbike.h"
 #include "Vehicle.h"
 
-Motorbike::Motorbike()
+Motorbike::Motorbike(int ID)
     {
+        this -> ID = ID;
         timeOfEntry = time(nullptr);
     }
+
+Motorbike::Motorbike()
+    :Motorbike(0){}
 
 int Motorbike::getParkingDuration(){
     time_t end_park = time(nullptr);

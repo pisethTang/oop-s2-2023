@@ -43,41 +43,41 @@ class A{
 };
 
 int main(){
-    // int num_vehicle;
-    // cout << "Enter the number of vehicles you want to park: ";
-    // cin >> num_vehicle;
-    // int i=0;
-    // cout << "You have chosen " << num_vehicle << " vehicles!\n";
-    // menu();
-    // int c;
-    // Vehicle** vehicles = new Vehicle*[num_vehicle];
-    // while(i<num_vehicle){
-    //     cin >> c;
-    //     switch(c){
-    //         case 1: 
-    //             vehicles[i] = new Car();
-    //             break;
-    //         case 2: 
-    //             vehicles[i] = new Motorbike();
-    //             break;
-    //         case 3: 
-    //             vehicles[i] = new Bus();
-    //             break;
-    //         default: break;
-    //     }
-    //     i++;
-    // }
+    int num_vehicle;
+    cout << "Enter the number of vehicles you want to park: ";
+    cin >> num_vehicle;
+    int i=0;
+    cout << "You have chosen " << num_vehicle << " vehicles!\n";
+    menu();
+    int c;
+    Vehicle** vehicles = new Vehicle*[num_vehicle];
+    while(i<num_vehicle){
+        cin >> c;
+        switch(c){
+            case 1: 
+                vehicles[i] = new Car();
+                break;
+            case 2: 
+                vehicles[i] = new Motorbike();
+                break;
+            case 3: 
+                vehicles[i] = new Bus();
+                break;
+            default: break;
+        }
+        i++;
+    }
 
-    // // iterate over the array and then call the getParkingDuration() to print the parking duration for each vehicle
-    // for(int i=0;i<num_vehicle;i++){
-    //     // vehicles[i].getParkingDuration();
-    //     std::cout << "Vehicle " << i << "'s parking duration = " << vehicles[i] -> getParkingDuration() << "\n"; 
-    // }
+    // iterate over the array and then call the getParkingDuration() to print the parking duration for each vehicle
+    for(int i=0;i<num_vehicle;i++){
+        // vehicles[i].getParkingDuration();
+        std::cout << "Vehicle " << i << "'s parking duration = " << vehicles[i] -> getParkingDuration() << "\n"; 
+    }
 
 
 
-    // for(int i=0;i<num_vehicle;i++) delete vehicles[i];
-    // delete[] vehicles;
+    for(int i=0;i<num_vehicle;i++) delete vehicles[i];
+    delete[] vehicles;
 
     // for(int i=0; i<num_vehicle;i++){
     //     vehicles[i].~vehicles[i];
