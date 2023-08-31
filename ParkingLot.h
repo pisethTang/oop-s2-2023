@@ -15,7 +15,7 @@ class ParkingLot{
         virtual void parkVehicle(Vehicle* vehicle);
         virtual void unparkVehicle(int ID);
 
-        // virtual ~ParkingLot();
+        ~ParkingLot();
 
 
 };

@@ -141,8 +141,8 @@ int main(){
         }
         else break;
     }*/
-    for(int i=0;i<park_lot.getCount();i++) delete Vehicles[i];
-    delete[] Vehicles;
+    // for(int i=0;i<park_lot.getCount();i++) delete Vehicles[i];
+    // delete[] Vehicles;
 
     delete[] v_types;
 

@@ -16,7 +16,6 @@ ParkingLot::ParkingLot()
 int ParkingLot::getCount(){ // returning the count of vehicles being parked right now
     return current_capacity;
 }
-
 void ParkingLot::parkVehicle(Vehicle* vehicle){ // the current capacity should increase after each of the function call
     if(current_capacity >= max_capacity){
         std::cout << "The lot is full\n";
@@ -50,7 +49,9 @@ void ParkingLot::unparkVehicle(int ID){
     else{
         std::cout << "Vehicle not in the lot"<<std::endl;  
     }
-
-
 }
-
+ParkingLot::~ParkingLot(){
+    for(int i=0;i<current_capacity;i++) delete vehicles[i];
+    delete[] vehicles;
+    
+}
