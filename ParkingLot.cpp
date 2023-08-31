@@ -26,56 +26,54 @@ void ParkingLot::parkVehicle(Vehicle* vehicle){ // the current capacity should i
     }
 
 }
-void ParkingLot::unparkVehicle(int ID){
-    bool flag = false;
-    int x;
-    for(int i=0;i<current_capacity; i++){
-        if(vehicles[i]->getID() == ID){
-            // std::cout << "Vehicle with ID " << ID << " found!\n";
-            // delete vehicles[i];
-            flag = true;
-            x = i;
-            break;
-        }
-         // ID is not found ==> vehicle not in the parking lot
-    }
-
-
-    if(flag){
-        delete vehicles[x];
-        current_capacity--;
-    }
-    else{
-        std::cout << "Vehicle not in the lot"<<std::endl;  
-    }
-}
-
-// void ParkingLot::unparkVehicle(int ID) {
+// void ParkingLot::unparkVehicle(int ID){
 //     bool flag = false;
-//     int index = -1;
-
-//     for (int i = 0; i < current_capacity; i++) {
-//         if (vehicles[i]->getID() == ID) {
+//     int x;
+//     for(int i=0;i<current_capacity; i++){
+//         if(vehicles[i]->getID() == ID){
+//             // std::cout << "Vehicle with ID " << ID << " found!\n";
+//             // delete vehicles[i];
 //             flag = true;
-//             index = i;
+//             x = i;
 //             break;
 //         }
+//          // ID is not found ==> vehicle not in the parking lot
 //     }
-
-//     if (flag) {
-//         delete vehicles[index];
-//         // Shift remaining vehicles in the array
-//         for (int i = index; i < current_capacity - 1; i++) {
-//             vehicles[i] = vehicles[i + 1];
-//         }
+//     if(flag){
+//         delete vehicles[x];
 //         current_capacity--;
-//     } else {
-//         std::cout << "Vehicle not in the lot" << std::endl;
+//     }
+//     else{
+//         std::cout << "Vehicle not in the lot"<<std::endl;  
 //     }
 // }
 
+void ParkingLot::unparkVehicle(int ID) {
+    bool flag = false;
+    int index = -1;
+
+    for (int i = 0; i < current_capacity; i++) {
+        if (vehicles[i]->getID() == ID) {
+            flag = true;
+            index = i;
+            break;
+        }
+    }
+
+    if (flag) {
+        delete vehicles[index];
+        // Shift remaining vehicles in the array
+        for (int i = index; i < current_capacity - 1; i++) {
+            vehicles[i] = vehicles[i + 1];
+        }
+        current_capacity--;
+    } else {
+        std::cout << "Vehicle not in the lot" << std::endl;
+    }
+}
+
 ParkingLot::~ParkingLot(){
-    // for(int i=0;i<current_capacity;i++) delete vehicles[i];
-    // delete[] vehicles;
+    for(int i=0;i<current_capacity;i++) delete vehicles[i];
+    delete[] vehicles;
     
 }
