@@ -15,6 +15,11 @@ void menu(){
          << "3. Bus\n" << endl;
 }
 
+void get_remaining_types(int* X, int length){
+    for(int i=0;i<length;i++){
+        cout << X[i] << " ";
+    }
+}
 
 
 int main(){
@@ -26,12 +31,12 @@ int main(){
     menu();
     ParkingLot park_lot(10);
     int c;
-    // int* v_types = new int[num_vehicle];
+    int* v_types = new int[num_vehicle];
     Vehicle** vehicles = new Vehicle*[num_vehicle];
    
     while(i<num_vehicle){
         cin >> c;
-        // *(v_types+ i) = c;
+        *(v_types+ i) = c;
         switch(c){
             case 1: 
                 vehicles[i] = new Car(1);
@@ -52,22 +57,24 @@ int main(){
     bool t = false;
     while(!t){
         char y;
+        // get_remaining_types(v_types);
         cout << "There are "<< park_lot.getCount() << " vehicles in the lot.\n"
-        << "Do you want to park a vehicle?(y/n)";
+        << "Do you want to park a vehicle?(y/n) ";
         cin >> y;
         
         if(y == 'y'){
-            int x, d;
-            d = x;
-            cout << "Which vehicle to park? "; cin >> x;
-            cout << "\nParking vehicle " << x << "\n";
-            park_lot.parkVehicle(vehicles[x]);
+            int x;
             
+            cout << "Which vehicle to park? "; cin >> x;
+            cout << "Parking vehicle" << x << "\n\n";
+           
+            park_lot.parkVehicle(vehicles[x]);
         }
         else break;
     }
     for(int i=0;i<num_vehicle;i++) delete vehicles[i];
     delete[] vehicles;
+    delete[] v_types;
 
     return 0;
 }
