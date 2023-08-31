@@ -12,8 +12,9 @@ class ParkingLot{
         ParkingLot();
 
         int getCount(); //returns the current capacity
-        virtual void parkVehicle(Vehicle* vehicle);
-        virtual void unparkVehicle(int ID);
+        void parkVehicle(Vehicle* vehicle);
+        void unparkVehicle(int ID);
+
 
          ~ParkingLot();
 
