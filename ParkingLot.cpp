@@ -1,5 +1,6 @@
 #include "ParkingLot.h"
 // #include "Vehicle.h"
+
 #include <iostream>
 
 ParkingLot::ParkingLot(int max_capacity)
@@ -72,8 +73,15 @@ void ParkingLot::unparkVehicle(int ID) {
     }
 }
 
+int ParkingLot::countOverstayingVehicles(int maxParkingDuration){
+    int count_overstaying_vehicles = 0;
+    for(int i=0; i<current_capacity;i++){
+        if(vehicles[i] -> getParkingDuration() >= maxParkingDuration) count_overstaying_vehicles++;
+    }
+    return count_overstaying_vehicles;
+}
+
 ParkingLot::~ParkingLot(){
     for(int i=0;i<current_capacity;i++) delete vehicles[i];
     delete[] vehicles;
-    
 }

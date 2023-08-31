@@ -15,6 +15,11 @@ class ParkingLot{
         void parkVehicle(Vehicle* vehicle);
         void unparkVehicle(int ID);
 
+        int countOverstayingVehicles(int maxParkingDuration); // in seconds
+        //returns the number of vehicles that have overstayed for 15 seconds
+
+        
+
 
          ~ParkingLot();
 
