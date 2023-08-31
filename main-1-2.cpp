@@ -15,11 +15,6 @@ void menu(){
          << "3. Bus\n" << endl;
 }
 
-void get_remaining_types(int* X, int length){
-    for(int i=0;i<length;i++){
-        cout << X[i] << " ";
-    }
-}
 
 
 int main(){
@@ -53,8 +48,7 @@ int main(){
         }
         i++;
     }
-    
-    bool t = false;
+    /*bool t = false;
     while(!t){
         char y;
         // get_remaining_types(v_types);
@@ -71,7 +65,7 @@ int main(){
             park_lot.parkVehicle(vehicles[x]);
         }
         else break;
-    }
+    }*/
     for(int i=0;i<num_vehicle;i++) delete vehicles[i];
     delete[] vehicles;
     delete[] v_types;
