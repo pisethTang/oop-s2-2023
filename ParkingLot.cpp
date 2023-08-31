@@ -29,12 +29,28 @@ void ParkingLot::parkVehicle(Vehicle* vehicle){ // the current capacity should i
 }
 
 void ParkingLot::unparkVehicle(int ID){
+    bool flag = false;
+    int x;
     for(int i=0;i<current_capacity; i++){
         if(vehicles[i]->getID() == ID){
             // std::cout << "Vehicle with ID " << ID << " found!\n";
-            delete vehicles[i];
-            current_capacity--;
+            // delete vehicles[i];
+            flag = true;
+            x = i;
+            break;
         }
+         // ID is not found ==> vehicle not in the parking lot
     }
-    std::cout << "Vehicle not in the lot"<<std::endl;
+
+
+    if(flag){
+        delete vehicles[x];
+        current_capacity--;
+    }
+    else{
+        std::cout << "Vehicle not in the lot"<<std::endl;  
+    }
+
+
 }
+
