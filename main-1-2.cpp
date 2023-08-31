@@ -117,6 +117,8 @@ int main(){
     cout << "Current capacity: " << park_lot.getCount() << "\n";
     park_lot.parkVehicle(Vehicles[0]);
     park_lot.parkVehicle(Vehicles[1]);
+    park_lot.parkVehicle(Vehicles[2]);
+
     cout << "Current capacity: " << park_lot.getCount() << "\n";
 
     cout << "\n--------------------------Unpark vehicle(s)----------------------------\n";
