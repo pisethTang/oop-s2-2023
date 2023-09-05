@@ -19,7 +19,12 @@ double TV::getScreenSize(){
     return screenSize;
 }
 
-double Appliance::getPowerConsumption(){
-    return powerRating * (screenSize/10);
+double TV::getPowerConsumption(){
+   return (powerRating * (screenSize/10));
+   
 }
 
+
+TV::~TV(){
+
+}

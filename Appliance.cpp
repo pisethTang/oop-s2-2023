@@ -33,3 +33,7 @@ bool Appliance::get_isOn(){
 Appliance::~Appliance(){
 
 }
+double Appliance::getPowerConsumption(){
+    return 0;
+}
+
