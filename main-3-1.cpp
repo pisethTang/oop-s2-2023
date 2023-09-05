@@ -34,7 +34,7 @@ int main(){
     std::cout << "Total power consumption: " << h1 -> getTotalPowerConsumption() << " W\n";
 
 
-
+    delete h1;
 
 
 
