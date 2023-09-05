@@ -1,4 +1,5 @@
 #include "House.h"
+#include <iostream>
 
 House::House(int numAppliances){
     this -> numAppliances = numAppliances;
@@ -27,13 +28,6 @@ bool House::addAppliance(Appliance* appliance){
     // 2. Define a current_capacity function that increments whenever a condition is met, and this leads to 
     // another problem of finding a condition on which the counter increments when it is met.
 
-
-
-
-
-
-
-
 double House::getTotalPowerConsumption(){
     int total_power = 0;
     for(int i=0;i<numAppliances;i++){
@@ -49,4 +43,5 @@ House::~House(){
         delete appliances[i];
     }
     delete appliances;
+    // std::cout << "Deleted House!\n";
 }
