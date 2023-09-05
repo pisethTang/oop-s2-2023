@@ -35,12 +35,8 @@ int main(){
 
 
     delete h1;
-    h1 = nullptr;
 
-
-
-
-
+    // h1 = nullptr
     // std::cout << "Test!" << std::endl;
     return 0;
 }
