@@ -16,7 +16,7 @@ class Appliance{
 
         // setters
 
-        void set_powerRating(int powerRating){}
+        void set_powerRating(int powerRating);
         // set isOn to true
         void turnOn();
         //set isOn to false
@@ -26,7 +26,7 @@ class Appliance{
         int get_powerRating();
         
 
-        virtual getPowerConsumption(){
+        virtual int getPowerConsumption(){
             return 0;
         }
 

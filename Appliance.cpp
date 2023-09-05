@@ -8,15 +8,15 @@ Appliance::Appliance()
     :powerRating(0), isOn(false)
     {}
 
-Appliance::set_powerRating(int powerRating)
-    : powerRating(powerRating)
-{}    
-
-Appliance::turnOff(){
+void Appliance::set_powerRating(int powerRating)
+{
+     this -> powerRating  = powerRating;
+ }
+void Appliance::turnOff(){
     isOn = false;
 }
 
-Appliance::turnOn(){
+void Appliance::turnOn(){
     isOn  = true;
 }
 
