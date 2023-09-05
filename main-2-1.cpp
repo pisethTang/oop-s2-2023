@@ -13,7 +13,9 @@ int main(){
     std::cout << "What is the fridge's power consumption?\n";
     std::cout << a1 -> getPowerConsumption() << " W." <<std::endl;
     std::cout << "What is the fridge's volume?\n";
-    std::cout << a1 -> get_volume() << " L" <<std::endl;
+    std::cout << a1 -> get_volume() << " litres" <<std::endl;
+    a1 -> set_volume(243);
+    std::cout << "New volume: " << a1 -> get_volume() << " litres\n";
 
 
 

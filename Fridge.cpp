@@ -1,8 +1,8 @@
 #include "Fridge.h"
 
 
-Fridge::Fridge(int powerRating, double volume){
-    this->powerRating = powerRating;
+Fridge::Fridge(int powerRating1, double volume){
+    this->powerRating = powerRating1; // use the this keyword
     this-> volume = volume;
 }
     
