@@ -35,6 +35,7 @@ int main(){
 
 
     delete h1;
+    h1 = nullptr;
 
 
 
