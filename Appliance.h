@@ -26,11 +26,11 @@ class Appliance{
         bool get_isOn(); // is the appliance on?
         
 
-        virtual int getPowerConsumption(){
-            return 0;
+        virtual double getPowerConsumption(){
+            return 0.0;
         }
 
-        ~Appliance();
+        virtual ~Appliance();
 
 
 
