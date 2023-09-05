@@ -12,6 +12,8 @@ void Appliance::set_powerRating(int powerRating)
 {
      this -> powerRating  = powerRating;
  }
+ 
+ 
 void Appliance::turnOff(){
     isOn = false;
 }
@@ -24,3 +26,10 @@ int Appliance::get_powerRating(){
     return powerRating;
 }
 
+bool Appliance::get_isOn(){
+    return isOn;
+}
+
+Appliance::~Appliance(){
+
+}
