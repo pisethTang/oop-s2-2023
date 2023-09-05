@@ -12,11 +12,11 @@ Fridge::Fridge(){
     this-> volume = 0.0;
 }
 
-void Fridge::set_volume(double volume){
+void Fridge::setVolume(double volume){
     this -> volume = volume;
 }
 
-double Fridge::get_volume(){
+double Fridge::getVolume(){
     return volume;
 }
 
