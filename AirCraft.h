@@ -22,9 +22,11 @@ class AirCraft{
 
 
         // getters
-        int get_weights();
-        int get_fuel();
-        int set_numberOfFlights();
+        int get_weight();
+        float get_fuel();
+        int get_numberOfFlights();
+
+
 
         
 };
