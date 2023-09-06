@@ -3,8 +3,8 @@
 AirCraft::AirCraft(int w)
 {
     this -> weight = w;
-    fuel = 0.0;
-    numberOfFlights = 100;
+    fuel = 100;
+    numberOfFlights = 0;
 }
 
 AirCraft::AirCraft(){
