@@ -41,3 +41,11 @@ void Helicopter::fly(int headwind, int minutes){
     }
 
 }
+
+void Helicopter::set_name(std::string name){
+    this -> name = name;
+}
+
+std::string Helicopter::get_name(){
+    return name;
+}
