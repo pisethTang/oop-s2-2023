@@ -12,7 +12,7 @@ Helicopter::Helicopter(){
 }
 void Helicopter::fly(int headwind, int minutes){
     int excess_weight = weight - 5670;
-    if(headwind < 40){
+    if(headwind >= 40){
         if(excess_weight >= 0){
             fuel = fuel - (0.2 * minutes) - (0.01 * excess_weight * minutes);
         }
@@ -34,7 +34,7 @@ void Helicopter::fly(int headwind, int minutes){
     // fuel it will not take off and fly, wont use fuel, 
     // and will not increment numberOfFlights. 
     if(fuel <= 20){
-        fuel = 100;
+        fuel = 0;
     }
     else{ // >= 20% of fuel
     numberOfFlights++;
