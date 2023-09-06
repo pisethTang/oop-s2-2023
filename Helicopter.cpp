@@ -10,6 +10,34 @@ Helicopter::Helicopter(int w, std::string n)
 Helicopter::Helicopter(){
 
 }
-void Helicopter::fly(){
-    if(headwind < 40) 
+void Helicopter::fly(int headwind, int minutes){
+    int excess_weight = weight - 5670;
+    if(headwind < 40){
+        if(excess_weight > 0){
+            fuel = fuel - (0.2 * minutes) - (0.01 * excess_weight * minutes);
+        }
+        else{
+            fuel = fuel - (0.2 * minutes);
+        }
+    }
+    else{
+        if(excess_weight > 0){
+            fuel = fuel - (0.4 * minutes) - (0.01 * excess_weight* minutes) ;
+        }
+        else{
+            fuel = fuel - (0.4 * minutes);
+        }
+    }
+    // flight finished 
+    
+    //If a flight would result in the Helicopter finishing with less than 20% 
+    // fuel it will not take off and fly, wont use fuel, 
+    // and will not increment numberOfFlights. 
+    if(fuel < 20){
+        fuel = 0;
+    }
+    else{ // >= 20% of fuel
+    numberOfFlights++;
+    }
+
 }
