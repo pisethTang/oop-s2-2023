@@ -6,6 +6,7 @@ using namespace std;
 int main(){
     AirCraft plane(300); // set the plane to 300 tons
     plane.set_numberOfFlights(2); 
+    cout << "Fuel: " << plane.get_fuel() << "%" << endl;
     plane.refuel();
     cout << "Weight: "<< plane.get_weight() <<endl;
     cout << "Fuel: " << plane.get_fuel() << "%" << endl;
