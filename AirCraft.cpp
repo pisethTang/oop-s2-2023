@@ -12,7 +12,7 @@ AirCraft::AirCraft(){
 }
 
 void AirCraft::refuel(){
-    fuel = 100;
+    fuel = 100.0;
 }
 
 void AirCraft::fly(int headwind, int minutes){
