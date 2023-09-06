@@ -34,7 +34,7 @@ void Helicopter::fly(int headwind, int minutes){
     // fuel it will not take off and fly, wont use fuel, 
     // and will not increment numberOfFlights. 
     if(fuel <= 20){
-        fuel = 0;
+        fuel = 100;
     }
     else{ // >= 20% of fuel
     numberOfFlights++;
