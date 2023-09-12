@@ -1,13 +1,14 @@
 #ifndef GRADE_H
 #define GRADE_H
-#include <string.h>
+#include <string>
 
 class Grade{
-    private:
+    protected:
         std::string assignment;
         int value;
+        int student_id;
     public:
-        Grade(std::string assignment, int value);
+        Grade(int student_id, std::string assignment, int value);
         Grade();
         //setters
         void setAssignment(std::string assignment);

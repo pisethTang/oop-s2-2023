@@ -8,11 +8,12 @@ class Course{
         int id;
         std::string name; 
 
-        int course_capacity;
+        int course_capacity; // maximum number of students that can be enrolled in the course
         int current_num_students_in_course;
         
     public:
         Course(int id, std::string name, int course_capacity);
+        Course();
         void addPerson(Person* p); // enrolled student into the course(polymorphism)
         
         //setters
@@ -25,7 +26,7 @@ class Course{
         int getCourseID();
         std::string getCourseName();
 
-        ~Course();
+        virtual ~Course();
 };
 
 

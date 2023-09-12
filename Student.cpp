@@ -1,7 +1,11 @@
 #include "Student.h"
 
-Student::Student(int studentID): Person(name){
+Student::Student(int studentID){
     this->studentID = studentID;
+}
+
+Student::Student(){
+    this -> studentID = 0;
 }
 
 //setters

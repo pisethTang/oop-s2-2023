@@ -2,9 +2,16 @@
 
 
 //defined constructor
-Grade::Grade(int id, std::string name){
-    this->id = id;
-    this->name = name;
+Grade::Grade(int student_id, std::string assignment, int value){
+    this -> student_id = student_id;
+    this -> assignment = assignment;
+    this -> value = value;
+}
+
+Grade::Grade(){
+    student_id = 0;
+    assignment = "";
+    value = 0;
 }
 
 //defining our setters

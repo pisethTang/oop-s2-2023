@@ -7,9 +7,16 @@ Course::Course(int id, std::string name, int course_capacity){
     this->current_num_students_in_course = 0;
 }
 
+Course::Course(){
+    this->id = 0;
+    this->name = "";
+    this->persons = new Person*[10];
+    this->current_num_students_in_course = 0;
+}
+
 void Course::addPerson(Person* p){
-    if(this->numPersons == this->course_capacity){
-        std::cout << "Course is full" << std::endl;
+    if(this->current_num_students_in_course == this->course_capacity){
+        // std::cout << "Course is full" << std::endl;
         return;
     }
 

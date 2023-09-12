@@ -3,9 +3,10 @@
 #include "Person.h"
 
 class Student: public Person{
-    private:
+    protected:
         int studentID;
     public:
+        Student();
         Student(int studentID);
         //setters
         void setStudentID(int studentID);
@@ -13,7 +14,7 @@ class Student: public Person{
         int getStudentID();
 
 
-}
+};
 
 
 
