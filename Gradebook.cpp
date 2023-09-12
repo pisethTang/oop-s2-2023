@@ -18,12 +18,12 @@ void Gradebook::addGrade(int stud_id, int course_id, std::string assignment, int
         // std::cout << "Gradebook is full" << std::endl;
         return;
     }
-    grades[count].setAssignment(assignment);
-    grades[count].setValue(value);
+    count++;
+    grades[count-1].setAssignment(assignment);
+    grades[count-1].setValue(value);
     // grades[count].setStudentID(stud_id);
     // grades[count].setCourseID(course_id);
 
-    count++;
 }
 
 Gradebook::~Gradebook(){
