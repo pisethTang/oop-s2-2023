@@ -13,6 +13,10 @@
 # 	@g++ SRC_DIR -lsfml-graphics -lsfml-system -lsfml-window -o game_1
 # 	@./game_1
 # This Makefile section takes game2.cpp, compiles it, and make an executable called game_2
-game2: game2.cpp 
-	@g++ game2.cpp -lsfml-graphics -lsfml-system -lsfml-window -o game_2
+game2_section: main.cpp 
+	@g++ main.cpp -lsfml-graphics -lsfml-system -lsfml-window -o game_2
 	@./game_2
+
+clean:
+	rm -f ./game_2
+	rm -f *.o
