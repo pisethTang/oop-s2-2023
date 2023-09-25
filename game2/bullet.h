@@ -25,7 +25,7 @@ class Bullet: public GameEntity{
      
 
         void move(){
-            body -> move(2.5,0);
+            body -> move(0.5,0);
         }
 
         bool isFired(){
