@@ -1,17 +1,22 @@
+#ifndef PLAYER_H
+#define PLAYER_H
 #include <SFML/Graphics.hpp>
 #include "bullet.h"
+#include "gameEntity.h"
 
-class Player{
+class Player: public GameEntity{
     private:
         sf::CircleShape* body;
         int mag_size;
         Bullet* mag;
+        // int _depth;
     public:
         Player(int r, int x, int y, int a_mag_size){
             body = new sf::CircleShape();
             body -> setRadius(r);
             body -> setPosition(x,y);
             body -> setFillColor(sf::Color::Green);
+            _depth = r;
             body -> setOrigin(r/2, r/2);
             mag_size = a_mag_size;
             // create a fixed number of bullets
@@ -48,6 +53,19 @@ class Player{
                 }
             }
         }  
+        bool isHit(int t_x, int t_y, int t_depth){
+            bool hit = false;
+            for(int i=0;i<mag_size;i++){
+                if(mag[i].isFired()){
+                    if(mag[i].isHit(t_x, t_y, t_depth))
+                    { 
+                        hit = true;
+                        return hit;
+                    }
+                }
+            }
+            return hit;
+        }
 
         void reload(){
             for(int i=0;i<mag_size;i++){
@@ -56,8 +74,21 @@ class Player{
                 }
             }
         }
+
+        int get_x(){
+            return body -> getPosition().x;
+        }   
+         int get_y(){
+            return body -> getPosition().y;
+        }      
+        int get_depth(){
+            return _depth;
+        }   
         ~Player(){
             delete this -> body;
             delete[] this -> mag;
         }
 };
+
+
+#endif

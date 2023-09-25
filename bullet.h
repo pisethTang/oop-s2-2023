@@ -1,27 +1,31 @@
+#ifndef BULLET_H
+#define BULLET_H
 #include <SFML/Graphics.hpp>
+#include "gameEntity.h"
 
-class Bullet{
+#include <cmath>
+class Bullet: public GameEntity{
     private:
-        sf::RectangleShape* body;
+        // sf::RectangleShape* body;
         bool fired;
+        // int _depth;
     public:
         Bullet(){
+            _depth = 5;
             body = new sf::RectangleShape(sf::Vector2f(10,10));
             body -> setFillColor(sf::Color::Red);
             body -> setPosition(-1,-1);
+            body -> setOrigin(_depth, _depth/2);
+            fired = false;
         }
         void draw(sf::RenderWindow* win){
             win -> draw(*body);
-
-
         }
 
-        void set_position(sf::Vector2f position){
-            body -> setPosition(position);
-        }
+     
 
         void move(){
-            body -> move(0.5,0);
+            body -> move(2.5,0);
         }
 
         bool isFired(){
@@ -31,15 +35,16 @@ class Bullet{
         void use(sf::Vector2f position){
             body -> setPosition(position);
             fired = true;
-        }
+        } 
 
         void reload(){
             fired = false;
-        }
-
-      
+        }      
         ~Bullet(){
             delete this -> body;
             
         }
 };
+
+
+#endif
