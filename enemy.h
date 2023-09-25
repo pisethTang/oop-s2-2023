@@ -15,9 +15,7 @@
 
 class Enemy: public GameEntity{
     private:
-        // sf::RectangleShape* body;
         bool alive;
-        // int _depth;
     public:
         Enemy(){
             _depth = 10;
@@ -30,9 +28,6 @@ class Enemy: public GameEntity{
 
         }
 
-    //   int get_x(){return body -> getPosition().x;}
-    //   int get_y(){ return body -> getPosition().y;}
-    //   int get_depth(){return _depth;}
 
       bool isHit(int target_x, int target_y, int target_depth){
             bool hit = false;
