@@ -6,14 +6,11 @@
 
 class Player: public GameEntity{
     private:
-        sf::CircleShape* body;
         int mag_size;
         Bullet* mag;
-        // int _depth;
     public:
         Player(int r, int x, int y, int a_mag_size){
-            body = new sf::CircleShape();
-            body -> setRadius(r);
+            body = new sf::CircleShape(r);
             body -> setPosition(x,y);
             body -> setFillColor(sf::Color::Green);
             _depth = r;
@@ -75,15 +72,6 @@ class Player: public GameEntity{
             }
         }
 
-        int get_x(){
-            return body -> getPosition().x;
-        }   
-         int get_y(){
-            return body -> getPosition().y;
-        }      
-        int get_depth(){
-            return _depth;
-        }   
         ~Player(){
             delete this -> body;
             delete[] this -> mag;

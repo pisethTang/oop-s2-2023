@@ -1,3 +1,5 @@
+#ifndef OOP_GAME_H
+#define OOP_GAME_H
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Keyboard.hpp>
 #include <iostream>
@@ -5,9 +7,10 @@
 #include <string>
 #include "player.h"
 #include "enemy.h"
-
+#include "game.h"
 using namespace sf;
-class OOPGame{
+
+class OOPGame: public Game{
     private:
         sf::RenderWindow* win;
         Player* player;
@@ -55,6 +58,17 @@ class OOPGame{
             }
             std::cout << _score << std::endl; 
         }
+        void draw_frame(){
+            player -> draw(win);
+            for(int i=0;i<_army_size;i++){
+                enemy[i].draw(win);
+            }
+
+            std::string msg;
+            msg = "Score: " + std::to_string(_score) + " .";
+            info.setString(msg);
+            win -> draw(info);
+        }
 
         void run(){
             while(win -> isOpen()){
@@ -91,16 +105,8 @@ class OOPGame{
             if(_score < 0){
                 return ;
             }
-            player -> draw(win);
-            for(int i=0;i<_army_size;i++){
-                enemy[i].draw(win);
-            }
-
-            std::string msg;
-            msg = "Score: " + std::to_string(_score) + " .";
-            info.setString(msg);
-            win -> draw(info);
-
+           
+            draw_frame();
             win -> display();
             }
         }
@@ -113,10 +119,6 @@ class OOPGame{
 };
 
 
-int main(){
-    OOPGame g(500, "OOPGame", 100, 50);  
-    g.run();
 
 
-    return 0;
-}
+#endif
