@@ -7,7 +7,11 @@ cd /home/sething2002/oop-s2-2023
 git add .
 
 # Commit with a specified message
-git commit -m "using script to push to remote"
+git commit -m "Add the executing process to the script."
 
 # Push to the specified branch
 git push origin workshop9
+
+# Automating the process of creating executable and running it
+chmod +x ./git_push_script.sh
+./git_push_script.sh

@@ -37,6 +37,7 @@ class EquivalenceTests{
             Addition addition;
             if (addition.add(10, 10) != 20) std::cout << "Test 7 failed!"<<std::endl;
         }
+        // just added to the script
 
 
 
