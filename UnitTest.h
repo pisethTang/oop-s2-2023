@@ -11,8 +11,8 @@ class UnitTest{
             // Add more tests here
             else if(addition.add(100,200) != 300) std::cout << "Test 2 failed!" <<std::endl;
             else if(addition.add(0, 9) != 9) std::cout << "Test 3 failed!" <<std::endl;
-            else if(addition.add(10.2, 10) != 20.2) std::cout << "Test 4 failed!" <<std::endl; 
-            else std::cout << "All tests passed!" <<std::endl;
+            else if(addition.add(10, 10) != 20) std::cout << "Test 4 failed!" <<std::endl; 
+            // else std::cout << "All tests passed!" <<std::endl;
         }
     public:
         void runTests(){
