@@ -30,7 +30,12 @@ class EquivalenceTests{
 
         void special(){
             Addition addition;
-            if (addition.add(1,-1) != 0) std::cout << "test 6 failed!" <<std::endl;
+            if (addition.add(1,-1) != 0) std::cout << "Test 6 failed!" <<std::endl;
+        }
+
+        void one_more(){
+            Addition addition;
+            if (addition.add(10, 10) != 20) std::cout << "Test 7 failed!"<<std::endl;
         }
 
 
