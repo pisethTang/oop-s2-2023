@@ -12,3 +12,11 @@ I will use this space to write some markdown files down as it has been a while I
 <b>Part 3 -  Examples: </b>
 <p>In this part, you will create a dedicated test class for the <font color=red>Invoice</font> class. We'll start by creating an <font color='magenta'>InvoiceTest</font> class to handle unit tests specifically for the ~~<font color='red'>Invoice</font>~~ class. The aim is to achieve full test coverage for all public functions in the <font color='red'>Invoice</font> class, including the constructor.</p>
 
+<h3>**<font color='yellow'>Submit the following files:</font>**</h3>
+- [x] main.cpp
+- [x] Addition.h
+- [] UnitTest.h
+- [] EquivalenceTests.h
+- [] Invoice.h
+- [] Invoice.cpp
+- [] InvoiceTest.h
