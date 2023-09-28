@@ -1,15 +1,19 @@
 #include <iostream>
 #include "UnitTest.h"
 #include "EquivalenceTests.h"
-#include <limits>
+#include "InvoiceTest.h"
 
 
 int main(){
     UnitTest unitTest;
-    unitTest.runTests();
+    // unitTest.runTests();
 
     EquivalenceTests equivalencetests;
-    equivalencetests.runTests();
- 
+    // equivalencetests.runTests();
+
+    InvoiceTest invoiceTest;
+    invoiceTest.runTests(); 
+
+
     return 0;
 }
