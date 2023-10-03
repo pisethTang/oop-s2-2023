@@ -1,8 +1,11 @@
 #ifndef TEXTBASED_H
 #define TEXTBASED_H
 
+#include <SFML/Window/Keyboard.hpp>
 #include <iostream>
 #include "Farm.h"
+
+
 
 
 class textBased {
@@ -39,19 +42,54 @@ public:
         return choice;
     }
 
+    void produce_menu(){
+        int choice = 0;
+        std::cout << "------------------------------------\n"
+                  << "Which produce would you like to buy?\n"
+                  << "------------------------------------\n"
+                  << "1. Crops\n"
+                  << "2. Animals\n";
+        std::cin >> choice;
+        switch(choice){
+            case 1:
+                // go into another Crops menu
+                std::cout << "Here are the crops.\n";
+                std::cout << "1. Wheat\n"
+                          << "2.Carrots\n"
+                          << "3. Potatoes\n";
+                break; 
+            case 2:
+                std::cout << "Here are the animals\n";
+                // go into another Animals menu
+         
+                break;
+        }
+        std::cin.get();
+
+       
+        
+
+    }
+
     // Function to execute the chosen action
     void executeAction(int choice){
         switch (choice) {
             case 1:
                 std::cout << "You chose to Shop Produce.\n";
                 // Add code for shopping produce
+                // The method below will try to access the produce's sub classes and 
+                // a menu that prints 
+                produce_menu();
+                // After clicking on the animal icon: sheep ($50), cow($35), 
+                // After clicking on the crop icon: carrot ($12), potatoes($10), and whear
+                
+                
                 break;
 
             case 2:
                 std::cout << "You chose to Buy Upgrades or Lands.\n";
                 // Add code for buying upgrades or lands
                 farm -> buyNewLand();
-                
                 break;
 
             case 3:

@@ -75,7 +75,7 @@ void Farm::buyNewLand() {
 
     } else {
         
-        std::cout << "MONEY = " << getMoney() <<  " NOT ENOUGH!------------------------------------\n";
+        std::cout << "MONEY = " << getMoney() <<  " <= 250 NOT ENOUGH!------------------------------------\n";
         exit(0);
     }
 }
