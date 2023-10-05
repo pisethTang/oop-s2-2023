@@ -72,9 +72,7 @@ void Farm::buyNewLand() {
         lands.push_back(Land(true, true));   
         setMoney(getMoney() - 250);
         current_land++;
-
     } else {
-        
         std::cout << "MONEY = " << getMoney() <<  " <= 250 NOT ENOUGH!------------------------------------\n";
         exit(0);
     }

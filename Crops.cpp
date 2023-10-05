@@ -22,3 +22,4 @@ void Crops::setGrowthStage(int newGrowthStage){
         growth_stage = getGrowthStage() + newGrowthStage;
     }
 }
+

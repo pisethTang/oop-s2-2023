@@ -1,16 +1,25 @@
 #include "Produce.h"
+#include <string>
 
-Produce::Produce(std::string newName, int newCost, int newSellPrice, int newBuyPrice){
+using namespace std;
+
+//constructors
+Produce::Produce(){
+    name = "";
+    cost_per_day = 0;
+    selling_price = 0;
+    buying_price = 0;
+}
+
+Produce::Produce(string newName, int newCost, int newSellPrice, int newBuyPrice){
     name = newName;
     cost_per_day = newCost;
     selling_price = newSellPrice;
     buying_price = newBuyPrice;
 }
 
-Produce::Produce(): Produce("", 0,0,0){}
-
 //functions
-std::string Produce::getName(){
+string Produce::getName(){
     return name;
 }
 
@@ -28,4 +37,8 @@ int Produce::getBuyingPrice(){
 
 void Produce::setSellingPrice(int newSellPrice){
     selling_price = selling_price + newSellPrice;
+}
+
+Produce::~Produce(){
+
 }
