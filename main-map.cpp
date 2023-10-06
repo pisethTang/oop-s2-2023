@@ -7,7 +7,7 @@ class Point{
     public:
         int _x, _y;
 };
-
+typedef std::vector<Point*> Point_v;
 
 
 
