@@ -4,11 +4,11 @@
 
 class USBConnection{
     private:
-        int id;
-        USBConnection();
-        static std::stack<int> ids; //keeps track of the given id
-        int current_ports;
+         int id;
+        USBConnection(int id);
+        //  int current_ports;
     public:
+        static std::stack<int> ids; //keeps track of the given id
         static USBConnection* CreateUsbConnection();
 
         int get_id();

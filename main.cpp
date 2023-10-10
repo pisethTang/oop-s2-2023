@@ -10,9 +10,17 @@ std::stack<int> USBConnection::ids({3,2,1});
 
 
 int main(){
+    // std::stack<int> W({3,2,1});
+    // W.pop();
+    // W.pop();
+    // W.pop();
+    // std::cout <<  W.top() << "\n";
+    // std::cin.get();
     int max_usb_ports = 10;
     USBConnection* c[max_usb_ports];
     
+
+    USBConnection* usb1 = USBConnection::CreateUsbConnection();
     for(int i=0;i<max_usb_ports;i++){
         // CreateUsbConnection is a static function
         // it creates a new objects of USBConnection ...
@@ -22,7 +30,7 @@ int main(){
         else std::cout << "No more USB ports available\n";
     }
 
-    // Let's unplug onbe used connection
+    // Let's unplug one used connection
     delete c[1];
     // this should return ID 2 to the stack
 
