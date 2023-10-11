@@ -1,0 +1,6 @@
+Program erros are generally divided into two categories:
+- Logic errors: caused by the programming mistake, for example, an "index out of range" error.
+- Runtime errors: beyon the control of programmer, for example, a "file not found " error.
+
+The preferred way to report and handle both of the types of errors above is to use exception.
+
