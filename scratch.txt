@@ -1,0 +1,20 @@
+----------------------Error message associated with each corrupt file----------------
++ test_corrupt1.txt
+--------------------------------------------------------------------------------------
+terminate called after throwing an instance of 'std::invalid_argument'
+  what():  stoi
+[1]    17333 IOT instruction  ./ws11
+--------------------------------------------------------------------------------------
++ test_corrupt2.txt
+--------------------------------------------------------------------------------------
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  stoi
+[1]    17942 IOT instruction  ./ws11
+--------------------------------------------------------------------------------------
+
+
+
+The method std::stoi() is often used in numeric conversions from string. Specifically, 
+it is used to convert a string with numeric content. For example, "290" is a string whose content is numeric (not symbolical such as a, #, %, ^, etc).
+
+
