@@ -3,7 +3,7 @@
 
 int main(){
     GameEntity g1;
-    std::cout << g1.getPos() << std::endl;
+    // std::cout << g1.getPos() << std::endl;
     
 
 
