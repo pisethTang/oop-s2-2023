@@ -10,7 +10,7 @@ GameEntity::GameEntity()
 std::tuple<int, int> GameEntity::getPos(){
     // return position;
     // we need to override the output operator <<
-    return position;
+    return {std::get<0>(position), std::get<1>(position)};
 }
 
 char GameEntity::getType(){
