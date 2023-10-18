@@ -10,10 +10,9 @@ GameEntity::GameEntity()
 std::tuple<int, int> GameEntity::getPos(){
     // return position;
     // we need to override the output operator <<
-    std::ostream &operator<<(std::ostream &os, const std::tuple<int, int> & position){
-        os << position.
-    }
+    return position;
 }
+
 char GameEntity::getType(){
     return type;
 }
