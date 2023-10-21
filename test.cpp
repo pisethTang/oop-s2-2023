@@ -4,6 +4,7 @@
 #include <time.h>
 #include <limits>
 
+
 std::tuple<int, int> getPos(std::tuple<int, int> &position){
     return {std::get<0>(position) + 1, std::get<1>(position) + 100};
 }
@@ -56,9 +57,11 @@ int main(){
     //     std::cout << RAND_MAX << std::endl;
     // }
     
-    std::tuple<int, int> pos = generateRandPos();
-    printTuple(pos);
-    
+    for(int i=0;i<10;i++){
+        std::tuple<int, int> pos = generateRandPos();
+        printTuple(pos);
+        std::cin.get();
+    }
     
     
     

@@ -5,6 +5,7 @@
 #include <cmath>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 // https://cplusplus.com/reference/cstdlib/rand/
 
 
