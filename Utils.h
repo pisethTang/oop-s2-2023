@@ -12,7 +12,7 @@
 class Utils{
     private:
     public:
-        static double calculateDistace(std::tuple<int, int> pos1, std::tuple<int, int> pos2){
+        static double calculateDistance(std::tuple<int, int> pos1, std::tuple<int, int> pos2){
             return sqrt(pow(std::get<0>(pos1) - std::get<0>(pos2),2) + pow(std::get<1>(pos1) - std::get<1>(pos2), 2));
         }
         static std::tuple<int, int> generateRandomPos(int gridWidth, int gridHeight){
@@ -22,8 +22,11 @@ class Utils{
             return {r1,r2};
         } // returns a random position
         
-        Utils(){}
-        ~Utils(){}
+        Utils(int x){
+            x = 10;
+            x++;
+        }
+        // ~Utils(){}
 
 
 

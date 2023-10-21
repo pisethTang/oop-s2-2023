@@ -12,11 +12,11 @@ int main(){
     std::tuple<int, int> origin = {0,0};
     int gridWidth = 10;
     int gridHeight = 10;
-    for(int i=0;i<100000;i++){
+    for(int i=0;i<10;i++){
         std::tuple<int, int> p = Utils::generateRandomPos(gridWidth, gridHeight);
         std::cout << "D{(0,0),";
         printTuple(p);
-        std::cout << "} = " << Utils::calculateDistace(origin,p) << std::endl;
+        std::cout << "} = " << Utils::calculateDistance(origin,p) << std::endl;
         // std::cout << "Enter to continue:";
         // std::cin.get();
         // usleep(890000);
