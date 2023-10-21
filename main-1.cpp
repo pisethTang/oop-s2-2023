@@ -19,7 +19,7 @@ int main(){
         std::cout << "} = " << Utils::calculateDistace(origin,p) << std::endl;
         // std::cout << "Enter to continue:";
         // std::cin.get();
-        usleep(890000);
+        // usleep(890000);
 
         
     }

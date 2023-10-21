@@ -5,20 +5,20 @@
 #include <limits>
 
 
-std::tuple<int, int> getPos(std::tuple<int, int> &position){
-    return {std::get<0>(position) + 1, std::get<1>(position) + 100};
-}
+// std::tuple<int, int> getPos(std::tuple<int, int> &position){
+//     return {std::get<0>(position) + 1, std::get<1>(position) + 100};
+// }
 
-void printTuple(std::tuple<int, int> T){
-    std::cout << "("  << std::get<0>(T) << ", " << std::get<1>(T) << ")" << std::endl;
-}
+// void printTuple(std::tuple<int, int> T){
+//     std::cout << "("  << std::get<0>(T) << ", " << std::get<1>(T) << ")" << std::endl;
+// }
 
-std::tuple<int, int> generateRandPos(){
-    srand(time(nullptr));
-    int r1 = rand() % 10 + 1; // generate random number between 1 to 10 
-    int r2 = rand() % 10 + 20; // generate random number between 2 to 10
-    return {r1, r2};
-}
+// std::tuple<int, int> generateRandPos(){
+//     srand(time(nullptr));
+//     int r1 = rand() % 10 + 1; // generate random number between 1 to 10 
+//     int r2 = rand() % 10 + 20; // generate random number between 2 to 10
+//     return {r1, r2};
+// }
 
 
 int main(){
@@ -57,11 +57,11 @@ int main(){
     //     std::cout << RAND_MAX << std::endl;
     // }
     
-    for(int i=0;i<10;i++){
-        std::tuple<int, int> pos = generateRandPos();
-        printTuple(pos);
-        std::cin.get();
-    }
+    // for(int i=0;i<10;i++){
+    //     std::tuple<int, int> pos = generateRandPos();
+    //     printTuple(pos);
+    //     std::cin.get();
+    // }
     
     
     
