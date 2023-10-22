@@ -9,7 +9,7 @@ class Effect{
         virtual void apply(GameEntity& entity){ }
 
         virtual ~Effect(){ 
-            std::cout << "Hello\n";
+            // std::cout << "Hello\n";
         }
 };
 
