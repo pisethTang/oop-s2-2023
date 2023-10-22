@@ -21,6 +21,15 @@ class GameEntity{
         
         char getType(){ return type;}
 
+
+        void setPos(int x, int y){
+            std::get<0>(position) = x;
+            std::get<1>(position) = y;
+        }
+        void setType(char type){
+            this -> type = type;
+        }
+
 };
 
 
