@@ -6,7 +6,9 @@ main-2: main-2.cpp
 	@g++ -Wall -Wextra main-2.cpp -o main-21
 	@./main-21
 
-
+main-3: main-3.cpp
+	@g++ main-3.cpp -o main3
+	@./main3
 
 
 clean-1:
@@ -14,3 +16,6 @@ clean-1:
 
 clean-2:
 	@rm -rf main-21
+
+clean-3:
+	@rm -rf main3

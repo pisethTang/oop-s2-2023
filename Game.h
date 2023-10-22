@@ -19,7 +19,7 @@ class Game{
             // entities = new GameEntity*[10];
         }
 
-        std::vector<GameEntity*> initgame(int numShips, int numMines, int gridWidth, int gridHeight){
+        std::vector<GameEntity*> initGame(int numShips, int numMines, int gridWidth, int gridHeight){
             // create the specified number of Mine and Ship objects with random positions
             for(int i=0;i<numShips; i++) 
             {
@@ -41,7 +41,7 @@ class Game{
         void gameLoop(int maxIterations, double mineDistanceThreshold)
         {
             int i=0; // number of iteration
-            
+
             while(i < maxIterations) 
             { // start game loop
                 // Move all the ships to (1,0)
@@ -76,8 +76,8 @@ class Game{
                         } // end of checking for mine objects        
                     } // end of checking for ship objects
                 } // end of checking for any ship within a mine's threshold
-            } // end of game loop
                 i++;
+            } // end of game loop
             
         }// end method
         
