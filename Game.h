@@ -13,6 +13,7 @@ class Game{
         std::vector<GameEntity*> entities; // store entities in our game;
         int numberShips;
         int numberMines;
+        int maxI;
     public:
         std::vector<GameEntity*> get_entities(){
             return entities;
@@ -20,6 +21,9 @@ class Game{
         Game(){
 
         }
+
+        int getnumShip(){return numberShips;}
+        int getMax(){return maxI;}
         void set_entities(){
             // entities = new GameEntity*[10];
         }
@@ -52,7 +56,10 @@ class Game{
         }
 
         bool allShipsDestroyed(){
-            if(numberShips == 0) return false;
+            // all ships have been destroyed
+            if(numberShips == 0) return true;
+            
+            // Some ships left....
             for (auto entity: entities){
                 if (entity -> getType() == 'S'){
                     Ship* ship = dynamic_cast<Ship*>(entity);
@@ -61,11 +68,14 @@ class Game{
                     }
                 }
             }
-            return true;
+            return false;
         }
+
+        
 
         void gameLoop(int maxIterations, double mineDistanceThreshold)
         { // start method
+            this -> maxI = maxIterations;
             int i=0; // number of iteration
             bool shipsLeft = allShipsDestroyed();
             while((i < maxIterations) && (shipsLeft == true))  // game loop will stop when either 

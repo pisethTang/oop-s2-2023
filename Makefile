@@ -10,6 +10,18 @@ main-3: main-3.cpp
 	@g++ main-3.cpp -o main3
 	@./main3
 
+test-1: test1.cpp
+	@g++ test1.cpp -o test1
+	@./test1
+
+test-2: test2.cpp
+	@g++ test2.cpp -o test2
+	@./test2
+
+test-3: test3.cpp
+	@g++ test3.cpp -o test3
+	@./test3
+
 
 clean-1:
 	@rm -rf main
