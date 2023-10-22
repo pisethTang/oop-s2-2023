@@ -9,7 +9,7 @@ class Explosion: public GameEntity{
         
     public: 
         Explosion(int x, int y): GameEntity(x,y, 'E'){}
-
+        Explosion(): Explosion(0,0){ }
         void apply(GameEntity& entity){
             // Set entity's position to (-1, -1)
             entity.setPos(-1, -1);
