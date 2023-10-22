@@ -11,9 +11,14 @@
 class Game{
     private:
         std::vector<GameEntity*> entities; // store entities in our game;
+        int numberShips;
+        int numberMines;
     public:
         std::vector<GameEntity*> get_entities(){
             return entities;
+        }
+        Game(){
+
         }
         void set_entities(){
             // entities = new GameEntity*[10];
@@ -21,13 +26,14 @@ class Game{
 
         std::vector<GameEntity*> initGame(int numShips, int numMines, int gridWidth, int gridHeight){
             // create the specified number of Mine and Ship objects with random positions
-            for(int i=0;i<numShips; i++) 
+            this -> numberShips = numShips;
+            for(int i=0;i<numberShips; i++) 
             {
                     std::tuple<int , int> pos = Utils::generateRandomPos(gridWidth,gridHeight);
                     entities.push_back(new Ship(std::get<0>(pos), std::get<1>(pos)));
             }
-
-            for(int i=0;i<numMines;i++) 
+            this -> numberMines = numMines;
+            for(int i=0;i<numberMines;i++) 
             {
                 std::tuple<int , int> pos = Utils::generateRandomPos(gridWidth,gridHeight);
                 entities.push_back(new Mine(std::get<0>(pos), std::get<1>(pos)));
@@ -38,11 +44,32 @@ class Game{
             return entities;
         }
 
-        void gameLoop(int maxIterations, double mineDistanceThreshold)
-        {
-            int i=0; // number of iteration
+        bool compare(std::tuple<int, int> pos1, std::tuple<int, int> pos2){
+            if ( (std::get<0>(pos1) == std::get<0>(pos2)) 
+                  && (std::get<1>(pos1) == std::get<1>(pos2)) // I love C++ 's freeform
+               ) return true;
+            return false;
+        }
 
-            while(i < maxIterations) 
+        bool allShipsDestroyed(){
+            if(numberShips == 0) return false;
+            for (auto entity: entities){
+                if (entity -> getType() == 'S'){
+                    Ship* ship = dynamic_cast<Ship*>(entity);
+                    if(ship != nullptr){
+                        if (compare(entity -> getPos(), {-1,-1})) numberShips--;
+                    }
+                }
+            }
+            return true;
+        }
+
+        void gameLoop(int maxIterations, double mineDistanceThreshold)
+        { // start method
+            int i=0; // number of iteration
+            bool shipsLeft = allShipsDestroyed();
+            while((i < maxIterations) && (shipsLeft == true))  // game loop will stop when either 
+                                                            // max iterations reached or all ships collapsed
             { // start game loop
                 // Move all the ships to (1,0)
                 for(auto entity : entities){
@@ -64,13 +91,14 @@ class Game{
                     if(entity -> getType() == 'S'){
                         Ship* ship = dynamic_cast<Ship*>(entity);
                         // Look for Mine object... 
+                        Explosion explosion;
                         for(auto otherEntity : entities){
                             if(otherEntity->getType() == 'M'){
                                 Mine* mine = dynamic_cast<Mine*>(otherEntity);
                                 // check if the distance is within reach
                                 if(Utils::calculateDistance(ship->getPos(), mine -> getPos()) <= mineDistanceThreshold){
-                                    mine->explode();
-                                    // explosion.apply(ship);
+                                    explosion = mine->explode();
+                                    explosion.apply(*ship);
                                 } // end of checking ships within mine threshold
                             }
                         } // end of checking for mine objects        
