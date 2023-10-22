@@ -12,7 +12,7 @@ int main(){
     // std::cout << std::get<0>(S1) << ", " << std::get<1>(S1) <<std::endl;
     // call their functions
     ship.move(1, 2); // (0+1, 0+2) = (1,2)
-    mine.explode();
+    mine.explode(1,1);
     std::tuple<int, int> S =  ship.getPos();
     std::cout << std::get<0>(S) << ", " << std::get<1>(S) <<std::endl;
 
