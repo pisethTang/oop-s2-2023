@@ -11,7 +11,7 @@ class Mine: public GameEntity{
         Explosion explode(){
             // returns an Explosion object
             
-            std::cout << "Mine exploded!" << std::endl;
+            // std::cout << "Mine exploded!" << std::endl;
             // change Mine type to 'X'
             
             return Explosion(2,2);
