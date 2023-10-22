@@ -1,6 +1,1 @@
 # oop-s2-2023
-
-Unit Testing is a systematic approach to validating individual components of code, emphasizing the breadth and depth of test coverage. A typical online search for unit testing may yield information about various framework and tools, but the core concept centers around testing discrete elements within a software system. These elements, or units, can vary in granularity, encompassing entire modules, individual classes, or specific functions. By isolating and scrutinizing these components, unit testing helps ensure that each part of the software operates correctly and efficiently, promoting overall system reliability and maintainability.
-
-Equivalence Classes, in the context of unit testing, refers to the grouping of input values that are expected similar behavior when used as inputs for the function or method under test. Bu identifying and testing a representative value from each equivalence class, we can achieve effective test coverage while minimizing the number of test cases. This approach helps in reducing redundancy in testing and focusing on identifying distince scenarios that might cause the system to behave differently, ensuring that each aspect of the functionality is tested proparly.
-
