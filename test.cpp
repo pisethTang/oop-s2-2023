@@ -20,8 +20,74 @@
 //     return {r1, r2};
 // }
 
+class A{
+    private: int x;
+    public:
+        A(){}
+        virtual void X(){}
+        void setX(int s){x = s;}
+        ~A(){}
+};
+
+
+// class B{
+//     public:
+//     class C{
+//         private: 
+//             char x;
+//             int s;
+//         // public:
+//             int X(){return 10;}
+//             C(){ }
+//             ~C(){ }
+//     };
+
+// };
+
+class B: public A{
+    private: int s;
+    public:
+        B(){ }
+        void X(){
+            std::cout << "B\n"; 
+            setX(-10);
+            s = 100;
+        }
+        ~B(){ }
+};
+
+
+class C: public A{
+    private:
+        char n;
+        double d;
+    public:
+        C(){ }
+        void X(){
+            std::cout << "C\n"; 
+            setX(100);
+            n = 'q';
+            d = 10.23;
+        }
+};
+
 
 int main(){
+    A** a = new A*[2];
+    a[0] = new B;
+    a[1] = new C;
+
+    for(int i=0;i<2;i++){
+        a[i] -> X();
+    }
+    // B::C L; // use a scope resolution operator as the named C is only defined within the scope B
+    // std::cout << L.X() << std::endl;
+
+
+
+    for(int i=0;i<2;i++) delete a[i];
+    delete[] a;
+    
     // std::tuple<int, char> foo (10, 'z');
     // auto bar = std::make_tuple("test", 3.1, 14, 'y');
 

@@ -22,11 +22,8 @@ class Utils{
             return {r1,r2};
         } // returns a random position
         
-        Utils(int x){
-            x = 10;
-            x++;
-        }
-        // ~Utils(){}
+        Utils(){ }
+        ~Utils(){ }
 
 
 

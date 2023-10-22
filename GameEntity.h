@@ -30,6 +30,9 @@ class GameEntity{
             this -> type = type;
         }
 
+        virtual ~GameEntity(){
+            
+        }
 };
 
 
