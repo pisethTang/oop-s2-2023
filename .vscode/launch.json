@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/sething2002/oop-s2-2023",
-      "program": "/home/sething2002/oop-s2-2023/build/Debug/outDebug",
+      "cwd": "/home/sething2002/oop-s2-2023/w10-static",
+      "program": "/home/sething2002/oop-s2-2023/w10-static/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
