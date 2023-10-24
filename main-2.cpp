@@ -24,7 +24,7 @@ int main(){
     // after the mine is exploded, we need to apply the explosion to the ship
     Explosion explosion = mine -> explode();
     std::cout << "---------------------------After explosion-----------------------\n";
-    explosion.apply(*ship);
+    explosion.apply(ship);
     std::cout << "";
     // std::cout << "Ship's type: " << ship -> getType() << std::get<0>(ship -> getPos()) << std::get<1>(ship -> getPos()) << std::endl;
     // std::cout << "Mine's type: " << mine -> getType() << std::endl;    

@@ -12,9 +12,9 @@ class Explosion: public GameEntity, Effect{
         }
         Explosion(): Explosion(0,0){ }
 
-        void apply(GameEntity& entity){
-            entity.setPos(-1, -1);
-            entity.setType('X');
+        void apply(GameEntity* entity){
+            entity -> setPos(-1, -1);
+            entity -> setType('X');
 
         }
 
