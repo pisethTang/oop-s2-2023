@@ -10,7 +10,8 @@ std::tuple<int, int>* generateRandomPositions(int N){
     int gridWidth = 25;
     int gridHeight = 30;
     for(int i=0;i<N;i++){
-        sleep(1);
+        // sleep(1);
+        // usleep(1000000); // 2 msecs
         A[i] = Utils::generateRandomPosition(gridWidth,gridHeight);
     }
     return A;
@@ -26,6 +27,7 @@ void printArrayTuples(std::tuple<int, int>* const X, int M){
 }
 
 int main(){
+    srand(time(nullptr));
     int N = 10;
     // generate N random positions into an array
     std::tuple<int, int>* S = generateRandomPositions(N); 

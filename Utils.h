@@ -12,12 +12,12 @@ class Utils{
 
     public:
         static std::tuple<int, int> generateRandomPosition(int gridWidth, int gridHeight){
-            srand(time(nullptr));
             // rand() generates random number between 0 and RAND_MAX (max size of integer)
             int rand1 = rand()%gridWidth + 1; // generate a random number between 1 and gridWdith
             int rand2 = rand()%gridHeight + 2; // generate a random number between 2 and gridHeight
             
-            return {rand1, rand2};
+            // return {rand1, rand2};
+            return std::tuple<int, int> {rand1, rand2};
 
         }
 
