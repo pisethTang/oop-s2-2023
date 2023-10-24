@@ -29,7 +29,7 @@ class GameEntity{
         }
 
 
-        ~GameEntity(){ }
+        virtual ~GameEntity(){ }
 
 };
 

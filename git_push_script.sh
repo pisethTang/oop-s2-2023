@@ -7,4 +7,4 @@ git add .
 git commit -m "Question 2"
 
 # Push to the remote repository of week 12
-git push origin workshop12
+git push origin workshop12_new 
