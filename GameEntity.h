@@ -18,9 +18,9 @@ class GameEntity{
 
         // setters
         void setPos(int x, int y){
-            // std::get<0>(position) = x;
-            // std::get<1>(position) = y;
-            std::tie(x,y) = position; // unpack elements
+            std::get<0>(position) = x;
+            std::get<1>(position) = y;
+            // std::tie(x,y) = position; // unpack elements
 
         }
 
