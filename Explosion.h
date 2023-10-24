@@ -5,7 +5,7 @@
 
 
 
-class Explosion: public GameEntity{
+class Explosion: public GameEntity, Effect{
     public:
         Explosion(int x, int y): GameEntity(x,y,'E'){ 
             // GameEntity(x,y,'E');
