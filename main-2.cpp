@@ -5,7 +5,7 @@
 
 
 int main(){
-// create Ship and Mine object
+// create Ship and Mine objects
     Ship ship; // (0,0)
     Mine mine; // (0,0)
     std::cout << "-----------------Initial Position------------------------" <<std::endl;
@@ -20,8 +20,8 @@ int main(){
               << std::get<1>(ship.getPos()) <<std::endl;
     std::cout << "Ship's type: " << ship.getType() <<std::endl;
     
-    Explosion* explosion = mine.explode();
-    explosion -> apply(ship); // Ship's position = (-1,-1) 
+    Explosion explosion = mine.explode();
+    explosion.apply(ship); // Ship's position = (-1,-1) 
                                     // Ship's type = 'X'
     std::cout << "---------------After exploded:----------------" << std::endl;
     std::cout << "Ship's position: " << std::get<0>(ship.getPos()) << ", " 
