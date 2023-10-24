@@ -13,7 +13,6 @@ class Explosion: public GameEntity{
         Explosion(): Explosion(0,0){ }
 
         void apply(GameEntity& entity){
-            // for some reason, entity is not changed. Strange...
             entity.setPos(-1, -1);
             entity.setType('X');
 
