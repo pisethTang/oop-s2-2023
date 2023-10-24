@@ -36,3 +36,27 @@ int main(){
 
     return 0;
 }
+
+
+
+/*
+Compiler stderr:
+source/test-2-1.cpp: In function ‘int main()’:
+source/test-2-1.cpp:14:43: error: conversion from ‘Explosion*’ to non-scalar type ‘Explosion’ requested
+   14 |     Explosion myExplosion = myMine.explode();
+      |                             ~~~~~~~~~~~~~~^~
+source/test-2-1.cpp:18:23: error: cannot convert ‘Ship’ to ‘GameEntity*’
+   18 |     myExplosion.apply(myShip);
+      |                       ^~~~~~
+      |                       |
+      |                       Ship
+In file included from source/Mine.h:4,
+                 from source/test-2-1.cpp:3:
+source/Explosion.h:15:32: note:   initializing argument 1 of ‘void Explosion::apply(GameEntity*)’
+   15 |         void apply(GameEntity* entity){
+      |                    ~~~~~~~~~~~~^~~~~~
+
+-------
+
+
+*/

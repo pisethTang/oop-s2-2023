@@ -11,7 +11,8 @@ class Mine: public GameEntity{
         Explosion explode(){
             // set Mine to 'X' after explosion
             setType('X');
-            return Explosion(std::get<0>(getPos()), std::get<1>(getPos())); // return an Explosion object
+            // return Explosion(std::get<0>(getPos()), std::get<1>(getPos())); // return an Explosion object
+            return Explosion();
         }
 
 };
