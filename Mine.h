@@ -8,10 +8,11 @@ class Mine: public GameEntity{
     public:
         Mine(int x, int y): GameEntity(x,y,'M'){ }
         Mine(): Mine(0,0){ }
-        Explosion* explode(){
+        Explosion explode(){
             // set Mine to 'X' after explosion
             setType('X');
-            return new Explosion; // return an Explosion object
+            Explosion e;
+            return e; // return an Explosion object
         }
 
 };

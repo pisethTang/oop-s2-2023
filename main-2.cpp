@@ -5,21 +5,21 @@
 
 
 int main(){
-    // Mine* mine = new Mine;
-    // Ship* ship = new Ship;
+    Mine* mine = new Mine;
+    Ship* ship = new Ship;
 
-    // std::cout << "Ship's type: " << ship -> getType() << std::endl;
-    // std::cout << "Mine's type: " << mine -> getType() << std::endl;
+    std::cout << "Ship's type: " << ship -> getType() << std::endl;
+    std::cout << "Mine's type: " << mine -> getType() << std::endl;
 
-    // // after the mine is exploded, we need to apply the explosion to the ship
-    // Explosion* explosion = mine -> explode();
-    // explosion -> apply(ship);
+    // after the mine is exploded, we need to apply the explosion to the ship
+    Explosion explosion = mine -> explode();
+    explosion.apply(*ship);
+    std::cout << "";
+    // std::cout << "Ship's type: " << ship -> getType() << std::get<0>(ship -> getPos()) << std::get<1>(ship -> getPos()) << std::endl;
+    std::cout << "Mine's type: " << mine -> getType() << std::endl;    
 
-    // std::cout << "Ship's type: " << ship -> getType() << std::endl;
-    // std::cout << "Mine's type: " << mine -> getType() << std::endl;    
-
-    // delete mine;
-    // delete ship;
+    delete mine;
+    delete ship;
     // delete explosion;
 
     return 0;
