@@ -5,16 +5,17 @@
 
 
 
-class Explosion: public GameEntity, Effect{
+class Explosion: public GameEntity{
     public:
         Explosion(int x, int y): GameEntity(x,y,'E'){ 
             // GameEntity(x,y,'E');
         }
         Explosion(): Explosion(0,0){ }
 
-        void apply(GameEntity* entity){
-            entity -> setPos(-1, -1);
-            entity -> setType('X');
+        void apply(GameEntity& entity){
+            // for some reason, entity is not changed. Strange...
+            entity.setPos(-1, -1);
+            entity.setType('X');
 
         }
 
