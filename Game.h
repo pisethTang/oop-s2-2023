@@ -15,6 +15,8 @@ class Game{
     public:
         std::vector<Cell*> & getGrid(){return grid;}
         std::vector<Cell*> initGame(int numCharacters, int numTraps, int gridWidth, int gridHeight){
+            this -> gridHeight = gridHeight;
+            this -> gridWidth = gridWidth;
             for(int i=0;i<numCharacters; i++){
                 std::tuple<int , int> randomPos = Utils::generateRandomPos( gridWidth, gridHeight);
                 int r1 = std::get<0>(randomPos);
@@ -55,7 +57,7 @@ class Game{
                     if(cell -> getType() == 'C'){
                         Character* character = static_cast<Character*>(cell);
                         if(checkChar(character -> getPos())){
-                            std::cout << "Character has won the game!";
+                            std::cout << "Character has won the game!" <<std::endl;
                             return;
                         }
                         for(auto entity: grid){
@@ -69,15 +71,12 @@ class Game{
                             }
                         }
                     }
-
                 }
                 
                 // std::cout << "Maximum number of iterations reached. Game over.";
                 i++;
             }
-
-            std::cout << "Maximum number of iterations reached. Game over." <<std::endl;
-
+            std::cout << "Maximum number of iterations reached. Game over." << std::endl;
         }
 
 };  
