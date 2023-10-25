@@ -15,7 +15,7 @@ class Game{
         int gridHeight;
     public:
         Game(){}
-        std::vector<Cell*> initGame(int numCharacters, int numTraps, int gridWidth, int gridHeight){
+        void initGame(int numCharacters, int numTraps, int gridWidth, int gridHeight){
             for(int i=0;i<numCharacters; i++){
                 std::tuple<int , int> randomPos = Utils::generateRandomPos( gridWidth, gridHeight);
                 int r1 = std::get<0>(randomPos);
@@ -29,14 +29,13 @@ class Game{
                 grid.push_back(new Trap(r1, r2));
             }
 
-            return grid;
+            // return grid;
         }
 
 
         void gameLoop(int maxIterations, double trapActivationDistance){
             int i = 0;
             while(i < maxIterations){
-                
                 if(grid[i] -> getType() == 'C'){
                     Character* character = dynamic_cast<Character*>(grid[i]);
                     character -> move(1,0); // move the chracter 1 distance in the x-axis
@@ -50,7 +49,7 @@ class Game{
                         bool b2 = std::get<1>(ch_pos) > 0 && std::get<1>(ch_pos) < gridHeight;
                         if(b1 && b2 == true) {
                             std::cout << "Character has won the game!" << std::endl;
-                            break;
+                            return;
                         }
                         else{
                         for(auto cell: grid){
