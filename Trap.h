@@ -4,9 +4,11 @@
 #include "Effect.h"
 
 
-class Trap{
-
-}
+class Trap: public Cell, Effect{
+    public:
+        Trap(int x, int y): Cell(x,y, 'T'){}
+        
+};
 
 
 
