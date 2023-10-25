@@ -44,10 +44,12 @@ class Game{
         void gameLoop(int maxIterations, double trapActivationDistance){
             // int i = 0;
             for(int i=0;i<maxIterations;i++){
-                if(grid[i] -> getType() == 'C'){
-                    Character* character = dynamic_cast<Character*>(grid[i]);
+                for(auto cell: grid){
+                if(cell -> getType() == 'C'){
+                    Character* character = dynamic_cast<Character*>(cell);
                     character -> move(1,0); // move the chracter 1 distance in the x-axis
-                    if(character == nullptr) std::cout << "character is nullptr\n";
+                    // if(character == nullptr) std::cout << "character is nullptr\n";
+                }
                 }
                 std::cout << "first loop ok!\n";
 
@@ -63,11 +65,11 @@ class Game{
                             // std::cout << "Character has won the game!" << std::endl;
                             // return;
                         // }
-                        // if(checkChar(ch_pos) == true){
-                        //       std::cout << "Character has won the game!" << std::endl;
-                        //         return;
-                        // }
-                        // else{
+                        if(checkChar(ch_pos) == true){
+                            std::cout << "Character has won the game!" << std::endl;
+                            return;
+                        }
+                        else{
                          // if not then 
                         for(auto cell: grid){
                             if(cell -> getType() == 'T'){
@@ -82,6 +84,7 @@ class Game{
                         }
 
                         }   
+                    }
                 }
 
                 // i++;
