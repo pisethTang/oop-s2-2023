@@ -13,7 +13,7 @@ class Game{
         int gridWidth;
         int gridHeight;
     public:
-        std::vector<Cell*> getGrid(){return grid;}
+        std::vector<Cell*> & getGrid(){return grid;}
         void initGame(int numCharacters, int numTraps, int gridWidth, int gridHeight){
             for(int i=0;i<numCharacters; i++){
                 std::tuple<int , int> randomPos = Utils::generateRandomPos( gridWidth, gridHeight);
