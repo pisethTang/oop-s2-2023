@@ -58,7 +58,7 @@ class Game{
                         Character* character = static_cast<Character*>(cell);
                         if(checkChar(character -> getPos())){
                             std::cout << "Character has won the game!" <<std::endl;
-                            return;
+                            // return;
                         }
                         for(auto entity: grid){
                             if(entity -> getType() == 'T')
