@@ -21,7 +21,7 @@ class Cell{
         }
         void setType(char type){ this -> type = type;}
 
-        
+        virtual ~Cell() { }
 
 
 };
