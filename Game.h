@@ -51,7 +51,7 @@ class Game{
                     // if(character == nullptr) std::cout << "character is nullptr\n";
                 }
                 }
-                std::cout << "first loop ok!\n";
+                // std::cout << "first loop ok!\n";
 
                 for(auto cell: grid){
                     if(cell -> getType() == 'C'){
