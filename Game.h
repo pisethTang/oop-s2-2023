@@ -10,11 +10,11 @@
 class Game{
     private:
         std::vector<Cell*> grid; // same as entities
-        std::vector<Cell*> & getGrid(){return grid;}
         int gridWidth;
         int gridHeight;
     public:
         Game(){}
+        std::vector<Cell*> & getGrid(){return grid;}
         void initGame(int numCharacters, int numTraps, int gridWidth, int gridHeight){
             for(int i=0;i<numCharacters; i++){
                 std::tuple<int , int> randomPos = Utils::generateRandomPos( gridWidth, gridHeight);
