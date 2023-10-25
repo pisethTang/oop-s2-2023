@@ -53,26 +53,23 @@ class Game{
 
                 for(auto cell: grid){
                     if(cell -> getType() == 'C'){
-                        Character* character = dynamic_cast<Character*>(cell);
+                        Character* character = static_cast<Character*>(cell);
                         if(checkChar(character -> getPos())){
                             std::cout << "Character has won the game!";
                             return;
                         }
                         for(auto entity: grid){
-                                if(entity -> getType() == 'T')
-                                {
-                                    Trap* trap = static_cast<Trap*>(entity);
-                                    // if(trap == nullptr) std::cout << "trap is null\n";
-                                    if(Utils::calculateDistance(character -> getPos(), entity -> getPos()) < trapActivationDistance){
+                            if(entity -> getType() == 'T')
+                            {
+                                Trap* trap = static_cast<Trap*>(entity);
+                                // if(trap == nullptr) std::cout << "trap is null\n";
+                                if(Utils::calculateDistance(character -> getPos(), entity -> getPos()) < trapActivationDistance){
                                         trap -> apply(*character);
-                                    }
                                 }
+                            }
                         }
-                           
-                        
-
                     }
-                   
+
                 }
                 
                 // std::cout << "Maximum number of iterations reached. Game over.";
