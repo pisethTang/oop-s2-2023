@@ -4,5 +4,5 @@ main-1: main-1.cpp
 
 
 main-2: main-2.cpp
-	@g++ main-2.cpp -o main-2
+	@g++ main-2.cpp -o main2
 	@./main2
