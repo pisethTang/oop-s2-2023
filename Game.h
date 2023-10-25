@@ -42,49 +42,43 @@ class Game{
         }
 
         void gameLoop(int maxIterations, double trapActivationDistance){
-            // int i = 0;
-            for(int i=0;i<maxIterations;i++){
-                for(auto cell: grid){
-                if(cell -> getType() == 'C'){
-                    Character* character = dynamic_cast<Character*>(cell);
-                    character -> move(1,0); // move the chracter 1 distance in the x-axis
-                    // if(character == nullptr) std::cout << "character is nullptr\n";
-                    if(checkChar(character -> getPos()) == true){
-                        std::cout << "Character has won the game!" << std::endl;
-                        return;
+            int i = 0;
+            while(i < maxIterations){
+                for(auto c:grid){
+                    if(c -> getType() == 'C'){
+                        Character* character = dynamic_cast<Character*>(c);
+                        character -> move(1,0); 
                     }
                 }
-                }
-                // std::cout << "first loop ok!\n";
 
                 for(auto cell: grid){
                     if(cell -> getType() == 'C'){
                         Character* character = dynamic_cast<Character*>(cell);
-                        std::tuple<int, int> ch_pos = character -> getPos();
-                        if(checkChar(ch_pos) == true){
+                        if(checkChar(character -> getPos())){
                             std::cout << "Character has won the game!" << std::endl;
                             return;
                         }
-                        else{
-                         // if not then 
-                        for(auto cell: grid){
-                            if(cell -> getType() == 'T'){
-                                Trap* trap = dynamic_cast<Trap*>(cell);
-                                // if(trap == nullptr && character == nullptr) std::cout << "character and trap is null";
-                                //std::cout << "trap is null" << std::endl;
-                                // else std::cout << "trap is not null\n";
-                                if(Utils::calculateDistance(character -> getPos(), trap -> getPos()) < trapActivationDistance){
-                                    trap -> apply(*character);
+                        for(auto entity: grid){
+                                if(entity -> getType() == 'T')
+                                {
+                                    Trap* trap = static_cast<Trap*>(entity);
+                                    if(trap == nullptr) std::cout << "trap is null\n";
+                                    if(Utils::calculateDistance(character -> getPos(), entity -> getPos()) < trapActivationDistance){
+                                        trap -> apply(*character);
+                                    }
                                 }
-                            }
                         }
+                           
+                        
 
-                        }   
                     }
+                   
                 }
-
-                // i++;
+                
+                // std::cout << "hello\n";
+                i++;
             }
+
             std::cout << "Maximum number of iterations reached. Game over." <<std::endl;
 
         }
