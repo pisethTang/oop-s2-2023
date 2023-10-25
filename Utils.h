@@ -9,6 +9,7 @@
 class Utils{
     public:
         static std::tuple<int, int> generateRandomPos(int gridWidth, int gridHeight){
+            srand(time(nullptr));
             int r1 = rand() % gridWidth + 1;
             int r2 = rand() % gridHeight + 2;
             return std::tuple<int, int> {r1,r2};
