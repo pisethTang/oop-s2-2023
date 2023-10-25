@@ -13,7 +13,6 @@ class Game{
         int gridWidth;
         int gridHeight;
     public:
-        Game(){}
         std::vector<Cell*> & getGrid(){return grid;}
         void initGame(int numCharacters, int numTraps, int gridWidth, int gridHeight){
             for(int i=0;i<numCharacters; i++){
@@ -22,6 +21,7 @@ class Game{
                 int r2 =std::get<1>(randomPos);
                 grid.push_back(new Character(r1, r2));
             }
+            
             for(int i=0;i<numTraps; i++){
                 std::tuple<int , int> randomPos = Utils::generateRandomPos( gridWidth, gridHeight);
                 int r1 = std::get<0>(randomPos);
@@ -44,6 +44,8 @@ class Game{
                 for(auto cell: grid){
                     if(cell -> getType() == 'C'){
                         Character* character = dynamic_cast<Character*>(cell);
+                        // if(character == nullptr) std::cout << "character is null" << std::endl;
+                        // else std::cout << "character is not null\n";
                         std::tuple<int, int> ch_pos = character -> getPos();
                         bool b1 = std::get<0>(ch_pos) > 0 && std::get<0>(ch_pos) < gridWidth;
                         bool b2 = std::get<1>(ch_pos) > 0 && std::get<1>(ch_pos) < gridHeight;
@@ -52,9 +54,12 @@ class Game{
                             return;
                         }
                         else{
-                        for(auto cell: grid){
-                            if(cell -> getType() == 'T'){
-                                Trap* trap = dynamic_cast<Trap*>(cell);
+                        for(auto cell1: grid){
+                            if(cell1 -> getType() == 'T'){
+                                Trap* trap = dynamic_cast<Trap*>(cell1);
+                                if(trap == nullptr) return;
+                                //std::cout << "trap is null" << std::endl;
+                                // else std::cout << "trap is not null\n";
                                 if(Utils::calculateDistance(character -> getPos(), trap -> getPos()) <= trapActivationDistance){
                                     trap -> apply(*character);
                                 }
@@ -64,6 +69,7 @@ class Game{
                         }
                     }
                 }
+
                 i++;
             }
             std::cout << "Maximum number of iterations reached. Game over." <<std::endl;

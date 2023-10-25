@@ -11,7 +11,7 @@ class Character: public Cell, Effect{
             setPos(dx + std::get<0>(position), dy + std::get<1>(position));
         }
 
-        void apply(Cell& cell){ } 
+        // void apply(Cell& cell){ } 
 
 };
 
