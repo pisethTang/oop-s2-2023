@@ -32,8 +32,8 @@ class Game{
             return grid;
         }
         bool checkChar(std::tuple<int, int> pos){
-            bool b1 = std::get<0>(pos) < 0 && std::get<0>(pos) > gridWidth;
-            bool b2 = std::get<1>(pos) < 0 && std::get<1>(pos) > gridHeight;
+            bool b1 = std::get<0>(pos) <= 0 && std::get<0>(pos) >= gridWidth;
+            bool b2 = std::get<1>(pos) <= 0 && std::get<1>(pos) >= gridHeight;
             if(b1 && b2 == true) { // check if any character has stepped outside of the grid
                     // std::cout << "Character has won the game!" << std::endl;
                     return true;
@@ -56,15 +56,7 @@ class Game{
                 for(auto cell: grid){
                     if(cell -> getType() == 'C'){
                         Character* character = dynamic_cast<Character*>(cell);
-                        // if(character == nullptr) std::cout << "character is null" << std::endl;
-                        // else std::cout << "character is not null\n";
                         std::tuple<int, int> ch_pos = character -> getPos();
-                        // bool b1 = std::get<0>(ch_pos) < 0 && std::get<0>(ch_pos) > gridWidth;
-                        // bool b2 = std::get<1>(ch_pos) < 0 && std::get<1>(ch_pos) > gridHeight;
-                        // if(b1 && b2 == true) { // check if any character has stepped outside of the grid
-                            // std::cout << "Character has won the game!" << std::endl;
-                            // return;
-                        // }
                         if(checkChar(ch_pos) == true){
                             std::cout << "Character has won the game!" << std::endl;
                             return;
