@@ -38,9 +38,9 @@ class Game{
             bool b2 = std::get<1>(pos) < 0 && std::get<1>(pos) > gridHeight;
             if(b1 && b2 == true) { // check if any character has stepped outside of the grid
                     // std::cout << "Character has won the game!" << std::endl;
-                    return true;
+                    return false;
             }
-            return false;
+            return true;
         }
 
         void gameLoop(int maxIterations, double trapActivationDistance){
@@ -58,7 +58,7 @@ class Game{
                         Character* character = static_cast<Character*>(cell);
                         if(checkChar(character -> getPos())){
                             std::cout << "Character has won the game!" <<std::endl;
-                            // return;
+                            return;
                         }
                         for(auto entity: grid){
                             if(entity -> getType() == 'T')
@@ -83,3 +83,29 @@ class Game{
 
 
 #endif
+
+
+/*Q2-1 (15/15)
+All files found, +1 marks.
+Successfully compiled program.out with files main-2.cpp. +2 marks
+Successfully compiled program.out with files test-2-1.cpp. +2 marks
+Q2-1 Test00 Passed. +10 marks
+Q3-1 (5/20)
+All files found, +1 marks.
+Successfully compiled program.out with files main-3.cpp. +2 marks
+Successfully compiled program.out with files test-3-1.cpp. +2 marks
+
+Q3-1 Test00 failed!
+
+< EXPECTED-OUTPUT
+---
+> YOUR-OUTPUT
+
+===Begin diff output===
+6,8c6
+< Character has won the game!
+< 
+< 
+---
+> Maximum number of iterations reached. Game over.
+====End diff output====*/
