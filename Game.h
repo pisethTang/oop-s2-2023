@@ -32,8 +32,8 @@ class Game{
             return grid;
         }
         bool checkChar(std::tuple<int, int> pos){
-            bool b1 = std::get<0>(pos) <= 0 && std::get<0>(pos) >= gridWidth;
-            bool b2 = std::get<1>(pos) <= 0 && std::get<1>(pos) >= gridHeight;
+            bool b1 = std::get<0>(pos) < 0 && std::get<0>(pos) > gridWidth;
+            bool b2 = std::get<1>(pos) < 0 && std::get<1>(pos) > gridHeight;
             if(b1 && b2 == true) { // check if any character has stepped outside of the grid
                     // std::cout << "Character has won the game!" << std::endl;
                     return true;
@@ -49,6 +49,10 @@ class Game{
                     Character* character = dynamic_cast<Character*>(cell);
                     character -> move(1,0); // move the chracter 1 distance in the x-axis
                     // if(character == nullptr) std::cout << "character is nullptr\n";
+                    if(checkChar(character -> getPos()) == true){
+                        std::cout << "Character has won the game!" << std::endl;
+                        return;
+                    }
                 }
                 }
                 // std::cout << "first loop ok!\n";
@@ -66,7 +70,7 @@ class Game{
                         for(auto cell: grid){
                             if(cell -> getType() == 'T'){
                                 Trap* trap = dynamic_cast<Trap*>(cell);
-                                if(trap == nullptr && character == nullptr) std::cout << "character and trap is null";
+                                // if(trap == nullptr && character == nullptr) std::cout << "character and trap is null";
                                 //std::cout << "trap is null" << std::endl;
                                 // else std::cout << "trap is not null\n";
                                 if(Utils::calculateDistance(character -> getPos(), trap -> getPos()) < trapActivationDistance){
