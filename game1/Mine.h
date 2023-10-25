@@ -18,6 +18,7 @@ class Mine: public GameEntity{
             // return Explosion();
         }
 
+    ~Mine(){ }
 };
 
 

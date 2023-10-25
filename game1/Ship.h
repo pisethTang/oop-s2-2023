@@ -12,6 +12,8 @@ class Ship: public GameEntity{
             std::get<1>(position) += dy;
         }
 
+        ~Ship(){ }
+
 
 };
 
