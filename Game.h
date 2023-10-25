@@ -55,9 +55,8 @@ class Game{
                         for(auto cell: grid){
                             if(cell -> getType() == 'T'){
                                 Trap* trap = dynamic_cast<Trap*>(cell);
-                                if(Utils::calculateDistance(character -> getPos(), trap -> getPos()) < trapActivationDistance){
+                                if(Utils::calculateDistance(character -> getPos(), trap -> getPos()) <= trapActivationDistance){
                                     trap -> apply(*character);
-
                                 }
 
                             }
@@ -67,6 +66,7 @@ class Game{
                 }
                 i++;
             }
+            std::cout << "Maximum number of iterations reached. Game over." <<std::endl;
 
         }
 
