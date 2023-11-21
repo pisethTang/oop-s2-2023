@@ -38,9 +38,10 @@ class Game{
             bool b2 = std::get<1>(pos) < 0 && std::get<1>(pos) > gridHeight;
             if(b1 && b2 == true) { // check if any character has stepped outside of the grid
                     // std::cout << "Character has won the game!" << std::endl;
-                    return false;
+                    return false; // character is out of position
             }
-            return true;
+            return true; //  character is not out of position
+
         }
 
         void gameLoop(int maxIterations, double trapActivationDistance){
@@ -73,7 +74,6 @@ class Game{
                     }
                 }
                 
-                // std::cout << "Maximum number of iterations reached. Game over.";
                 i++;
             }
             std::cout << "Maximum number of iterations reached. Game over." << std::endl;
